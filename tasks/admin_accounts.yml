@@ -8,7 +8,7 @@
 - name: Gather information about existing home directories
   stat:
     path: '{{ item }}'
-  with_items: '{{ lookup("template", "lookup/stat_home_path.j2") | from_yaml }}'
+  with_items: '{{ lookup("template_src", "lookup/stat_home_path.j2") | from_yaml }}'
   register: bootstrap__register_home
 
 - name: Create required system groups
